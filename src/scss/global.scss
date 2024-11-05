@@ -1,8 +1,14 @@
-@charset "utf-8";
+@charset "utf-8"; //   UTF-8 인코딩을 선언하여 한글과 특수문자를 올바르게 표시 (이 선언은 스타일시트의 맨 앞에 위치해야 함
+// @import './font.scss'; // sass에서 더 이상 권장되지 않아 @use 사용
+@use './font.scss';
 
 :root {
   --red: #ea7664;
   --black: #544f4f;
   --brown: #89757a;
   --beige: #f6f5f5;
+}
+
+body {
+  font-family: 'NanumGimYuICe';
 }
