@@ -1,7 +1,7 @@
 // EOT -> TTF/OTF -> WOFF -> WOFF2 순으로 용량이 작다. (브라우저마다 지원범위도 다르니 참고) woff2 지원 안하면 woff 사용 woff도 지원 안하면 ttf 사용. 이 순서로 하면 브라우저 호환성 문제 해결 가능
 @font-face {
-  font-family: 'NanumGimYuICe';
-  src: url('../assets/fonts/NanumGimYuICe.woff2') format('woff2'),
-    url('../assets/fonts/NanumGimYuICe.woff') format('woff'),
-    url('../assets/fonts/NanumGimYuICe.ttf') format('truetype');
+  font-family: 'NanumBanJjagBanJjagByeor';
+  src: url('../assets/fonts/NanumBanJjagBanJjagByeor.woff2') format('woff2'),
+    url('../assets/fonts/NanumBanJjagBanJjagByeor.woff') format('woff'),
+    url('../assets/fonts/NanumBanJjagBanJjagByeor.ttf') format('truetype');
 }
