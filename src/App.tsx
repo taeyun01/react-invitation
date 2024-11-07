@@ -10,6 +10,8 @@ import Intro from './components/sections/Intro'
 import Invitation from './components/sections/Invitation'
 import Calendar from './components/sections/Calendar'
 import Map from './components/sections/Map'
+import Contact from './components/sections/Contact'
+import { delay } from './utils/delay'
 
 const cx = classNames.bind(styles)
 
@@ -17,7 +19,6 @@ function App() {
   const [wedding, setWedding] = useState<Wedding | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
-
   // 데이터 호출
   useEffect(() => {
     setLoading(true)
@@ -79,6 +80,7 @@ function App() {
       <ImageGallery images={galleryImages} />
       <Calendar date={date} />
       <Map location={location} />
+      <Contact groom={groom} bride={bride} />
       {/* {JSON.stringify(wedding)} */}
     </div>
   )
