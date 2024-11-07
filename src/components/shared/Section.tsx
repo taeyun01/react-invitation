@@ -10,7 +10,7 @@ const Section = ({
 }: {
   children: React.ReactNode
   className?: string
-  title?: string
+  title?: React.ReactNode // title을 컴포넌트 레벨로 받을 수 있게 수정(ReactNode안에 string이 기본적으로 포함돼 있음)
 }) => {
   return (
     <section className={cx(['container', className])}>

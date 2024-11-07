@@ -18,7 +18,7 @@ const DAYS = [
 const Heading = ({ date }: { date: string }) => {
   const weddingDate = parseISO(date)
 
-  console.log(DAYS[getDay(weddingDate)])
+  // console.log(DAYS[getDay(weddingDate)])
 
   return (
     <Section className={cx('container')}>
