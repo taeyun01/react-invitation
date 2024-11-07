@@ -13,6 +13,7 @@ declare global {
 
 const cx = classNames.bind(styles)
 
+// 카카오맵은 소문자 kakao 객체고, 카카오톡공유는 대문자 Kakao 이므로 주의
 const Map = ({ location }: { location: Location }) => {
   const mapContainer = useRef<HTMLDivElement>(null)
 
