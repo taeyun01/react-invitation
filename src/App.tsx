@@ -11,7 +11,6 @@ import Invitation from './components/sections/Invitation'
 import Calendar from './components/sections/Calendar'
 import Map from './components/sections/Map'
 import Contact from './components/sections/Contact'
-import { delay } from './utils/delay'
 import Share from './components/sections/Share'
 
 const cx = classNames.bind(styles)
@@ -83,6 +82,21 @@ function App() {
       <Map location={location} />
       <Contact groom={groom} bride={bride} />
       <Share groomName={groom.name} brideName={bride.name} date={date} />
+      {/* <Modal
+        open={true}
+        title="현재 참석자"
+        body={
+          <div>
+            <input type="text" />
+          </div>
+        }
+        onLeftButtonClick={() => {
+          console.log('왼쪽 클릭')
+        }}
+        onRightButtonClick={() => {
+          console.log('오른쪽 클릭')
+        }}
+      /> */}
     </div>
   )
 }
