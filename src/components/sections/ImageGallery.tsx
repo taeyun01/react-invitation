@@ -3,6 +3,7 @@ import styles from './ImageGallery.module.scss'
 import Section from '../shared/Section'
 import ImageViewer from '../imageViewer'
 import { useState } from 'react'
+import generateImageUrl from '../../utils/generateImageUrl'
 
 const cx = classNames.bind(styles)
 
@@ -28,7 +29,28 @@ const ImageGallery = ({ images }: { images: string[] }) => {
               className={cx('wrap-image')}
               onClick={() => handleSelectImage(idx)}
             >
-              <img src={image} alt="사진첩 이미지" />
+              {/* picture태그: 브라우저가 이미지 포맷을 지원하는지 확인 후 지원하는 포맷으로 이미지 표시 */}
+              {/* <img src={image} alt="사진첩 이미지" /> */}
+              <picture>
+                {/* <source srcSet={`${image}.webp`} type="image/webp" /> */}
+                <source
+                  srcSet={generateImageUrl({
+                    fileName: image,
+                    format: 'webp',
+                    option: 'w_240,h_240,q_auto,c_fill',
+                  })}
+                  type="image/webp"
+                />
+                {/* <img src={`${image}.jpg`} alt="사진첩 이미지" /> */}
+                <img
+                  srcSet={generateImageUrl({
+                    fileName: image,
+                    format: 'jpg',
+                    option: 'w_240,h_240,q_auto,c_fill',
+                  })}
+                  alt="사진첩 이미지"
+                />
+              </picture>
             </li>
           ))}
         </ul>

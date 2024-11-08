@@ -31,6 +31,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.3.12"],\
           ["@types/react-copy-to-clipboard", "npm:5.0.7"],\
           ["@types/react-dom", "npm:18.3.1"],\
+          ["@types/swiper", "npm:6.0.0"],\
           ["@vitejs/plugin-react", "virtual:2aff2f060f2eaa1aead584f0d02a59b8381a7b28d8b6bddf7e4be1c580835b71c3a94b22c2b990284cc5b13977a215325775767c8124c2a2bf5de73f08c081e1#npm:4.3.3"],\
           ["classnames", "npm:2.5.1"],\
           ["date-fns", "npm:4.1.0"],\
@@ -1445,6 +1446,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@types/react-dom", "npm:18.3.1"],\
           ["@types/react", "npm:18.3.12"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/swiper", [\
+      ["npm:6.0.0", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@types-swiper-npm-6.0.0-f998517f2b-10c0.zip/node_modules/@types/swiper/",\
+        "packageDependencies": [\
+          ["@types/swiper", "npm:6.0.0"],\
+          ["swiper", "npm:11.1.14"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4205,6 +4216,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.3.12"],\
           ["@types/react-copy-to-clipboard", "npm:5.0.7"],\
           ["@types/react-dom", "npm:18.3.1"],\
+          ["@types/swiper", "npm:6.0.0"],\
           ["@vitejs/plugin-react", "virtual:2aff2f060f2eaa1aead584f0d02a59b8381a7b28d8b6bddf7e4be1c580835b71c3a94b22c2b990284cc5b13977a215325775767c8124c2a2bf5de73f08c081e1#npm:4.3.3"],\
           ["classnames", "npm:2.5.1"],\
           ["date-fns", "npm:4.1.0"],\
