@@ -22,22 +22,17 @@ const AttendCountModal = ({ wedding }: { wedding: Wedding }) => {
       onRightButtonClick: async () => {
         // console.log(inputRef.current?.value)
         try {
-          await fetch(
-            `${
-              import.meta.env.VITE_APP_SERVER_URL ?? 'http://localhost:8888'
-            }/wedding`,
-            {
-              method: 'PUT',
-              body: JSON.stringify({
-                ...wedding,
-                attendCount:
-                  wedding.attendCount + Number(inputRef.current?.value),
-              }),
-              headers: {
-                'Content-Type': 'application/json',
-              },
+          await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/wedding`, {
+            method: 'PUT',
+            body: JSON.stringify({
+              ...wedding,
+              attendCount:
+                wedding.attendCount + Number(inputRef.current?.value),
+            }),
+            headers: {
+              'Content-Type': 'application/json',
             },
-          )
+          })
           localStorage.setItem('@haveSeenModal', 'true')
           close()
         } catch (error) {
