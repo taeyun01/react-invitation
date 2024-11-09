@@ -1,4 +1,4 @@
-@import '../../scss/utils.scss';
+@use '../../scss/utils.scss' as *;
 
 .container {
   @include text-content;

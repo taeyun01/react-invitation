@@ -2,7 +2,7 @@ import classNames from 'classnames/bind'
 import styles from './ImageViewer.module.scss'
 const cx = classNames.bind(styles)
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
+import 'swiper/swiper-bundle.css'
 import './swiper.css'
 import Dimmed from '../shared/Dimmed'
 import generateImageUrl from '../../utils/generateImageUrl'

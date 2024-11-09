@@ -22,7 +22,7 @@ const AttendCountModal = ({ wedding }: { wedding: Wedding }) => {
       onRightButtonClick: async () => {
         // console.log(inputRef.current?.value)
         try {
-          await fetch(`http://localhost:8888/wedding`, {
+          await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/wedding`, {
             method: 'PUT',
             body: JSON.stringify({
               ...wedding,

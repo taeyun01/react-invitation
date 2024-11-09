@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind'
 import styles from './App.module.scss'
-import FullScreenMessage from './components/shared/FullScreenMessage'
 import Heading from './components/sections/Heading'
 import Video from './components/sections/Video'
 import ImageGallery from './components/sections/ImageGallery'

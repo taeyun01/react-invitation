@@ -7,6 +7,7 @@ import { Location } from '../../models/wedding'
 // window 객체에 kakao타입이 없어 에러남. 또 하려면 까다로우니 우선 쉽게 any로 타입 선언
 declare global {
   interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     kakao: any
   }
 }
@@ -96,8 +97,8 @@ const WayToCome = ({
     <div className={cx('wrap-waytocome')}>
       <div className={cx('label')}>{label}</div>
       <ul>
-        {list.map((waytocome) => (
-          <li>{waytocome}</li>
+        {list.map((waytocome, index) => (
+          <li key={index}>{waytocome}</li>
         ))}
       </ul>
     </div>
