@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind'
 import styles from './App.module.scss'
 import Heading from './components/sections/Heading'
-import Video from './components/sections/Video'
+// import Video from './components/sections/Video'
 import ImageGallery from './components/sections/ImageGallery'
 import Intro from './components/sections/Intro'
 import Invitation from './components/sections/Invitation'
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className={cx('container')}>
       <Heading date={date} />
-      <Video />
+      {/* <Video /> */}
       <Intro
         groomName={groom.name}
         brideName={bride.name}
