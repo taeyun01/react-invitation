@@ -1,4 +1,11 @@
-import { ComponentProps, createContext, useContext, useState } from 'react'
+import {
+  ComponentProps,
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react'
 
 import Modal from '../components/shared/Modal'
 import { createPortal } from 'react-dom'
@@ -26,18 +33,23 @@ const ModalContext = ({ children }: { children: React.ReactNode }) => {
 
   const $portalRoot = document.getElementById('root-portal')
 
-  const open = (options: ModalOptions) => {
+  // 매번 새롭게 생기지 않도록 useCallback 사용
+  const open = useCallback((options: ModalOptions) => {
     setModalState({ ...options, open: true })
-  }
+  }, [])
 
-  const close = () => {
+  const close = useCallback(() => {
     setModalState(defaultValues)
-  }
+  }, [])
 
-  const values = {
-    open,
-    close,
-  }
+  // values도 useMemo로 캐싱
+  const values = useMemo(
+    () => ({
+      open,
+      close,
+    }),
+    [open, close], // open, close함수를 의존성으로 갖고 있긴하지망 얘네는 useCallback로 캐싱되어있기 때문에 매번 새롭게 생기지 않음. 리렌더링이 발생하지 않음
+  )
 
   // ContextAPI 같은 경우에는 계속 상태가 업데이트 되면서 하위 자식들을 다 렌더링 시켜버려 성능적으로 안 좋은 부분이 있음(그래서 나중에 useMemo, useCallback 사용)
   return (

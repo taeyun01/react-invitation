@@ -1,4 +1,4 @@
-@import '../../scss/variable.scss';
+@use '../../scss/variable' as *; // variable.scss의 모든 변수와 믹스인을 현재 파일에서 사용할 수 있습니다.
 
 .dimmed {
   position: fixed;

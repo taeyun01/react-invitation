@@ -10,6 +10,7 @@ const AttendCountModal = ({ wedding }: { wedding: Wedding }) => {
   const haveSeenModal = localStorage.getItem('@haveSeenModal')
 
   useEffect(() => {
+    // console.log('무한 렌더링?')
     if (haveSeenModal) return
     open({
       title: `현재 참석자: ${wedding.attendCount} 명`,
@@ -39,7 +40,9 @@ const AttendCountModal = ({ wedding }: { wedding: Wedding }) => {
         }
       },
     })
-  }, []) // eslint-disable-line
+  }, [open, close, wedding, haveSeenModal])
+  // open, close를 의존성 배열에 넣으면 무한 렌더링 발생 (그 이유는 모달 컴포넌트가 렌더링될 때마다 open, close가 호출되기 때문)
+  // ModalContext가 새로 그려지면서 open, close 함수도 새롭게 만들어지고 useEffect는 open, close도 새로운 애라고 판단을 하면서 계속 리렌더링. 즉 무한루프가 발생
   return null
 }
 
