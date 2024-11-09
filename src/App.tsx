@@ -16,9 +16,7 @@ import useWedding from './hooks/useWedding'
 const cx = classNames.bind(styles)
 
 function App() {
-  const { wedding, error } = useWedding()
-
-  if (error) return <FullScreenMessage type="error" />
+  const { wedding } = useWedding()
 
   if (!wedding) return null
 
